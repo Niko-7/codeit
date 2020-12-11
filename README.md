@@ -4,7 +4,7 @@ A full stack project
 
 Front-End was build using React.js
 
-CodeIt live version host here :
+CodeIt live version host here : https://codeit-nc.netlify.app/
 
 To run the project locally fork the repo and clone into your machine.
 Open the folder with VS Code and run "npm install" in you terminal.
