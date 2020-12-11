@@ -2,8 +2,9 @@
 
 A full stack project
 
-Front-End was build using React.js
+A Full-Stack project of an API containing articles, topics, comments and users data. Users can choose to scroll through all articles or filter by topic, post comments or vote on an article they find interesting(or maybe downvote one thats not!) 
 
+Front-End built with React.Js
 CodeIt live version host here : https://codeit-nc.netlify.app/
 
 To run the project locally fork the repo and clone into your machine.
