@@ -20,7 +20,7 @@ This is a front-end project built with React.JS, and it is a social/news web app
 - sorting articles by date, votes and by order (ascending / descending)
 
 
-The React application was built with mobile-first approach and has a responsive design. It was also built with considerations of the user-friendly experience, such as optimistic rendering which updates the state optimistically. This provides feedback to the user when they have voted or posted a comment.
+The React application was built with mobile-first approach and has a responsive design. It was also built with considerations of the user-friendly experience, such as optimistic rendering which updates the state optimistically, this provides feedback to the user when they have voted or posted a comment.
 
 
 Further, error handling was implemented in the back-end project for this React application which supplies the front-end with error messages.
@@ -28,9 +28,9 @@ Further, error handling was implemented in the back-end project for this React a
 Error handling was also supplemented for all API requests with React.JS and the app produces error messages appropriately for wrong requests or wrong endpoints.
 
 
-**Hosted version:** https://social-news-project.netlify.app/
+**Hosted version:** https://codeit-nc.netlify.app/
 
-The **back-end API** for this project can be found here https://github.com/dmarkesini/Backend-project and was build with Node.JS.
+The **back-end API** for this project can be found here https://github.com/Niko-7/nc_news and was build with Node.JS.
 
 ---
 
@@ -48,7 +48,7 @@ To run the project locally you need to clone the repository and then run the fol
 
 NOTE: The minimum version of **Node.JS** to run the project is v6.9. **React.JS** v18.0 was also utilised.
 
-1. First, please fork the project from this link https://github.com/dmarkesini/frontend-project-nc-news
+1. First, please fork the project from this link https://github.com/Niko-7/nc_news.git
 
 2. To clone the project run this command along with the link of your forked project
 
@@ -59,7 +59,7 @@ git clone <project_name_here>
 3. Then, go into the directory and open the project
 
 ```sh
-cd Backend-project
+cd <project_name_here>
 ```
 
 4. Install the dependencies
@@ -78,7 +78,6 @@ npm run start
 
 ## Hosting
 
-This React.JS application is hosted on [Netlify](https://www.netlify.com/) at https://social-news-project.netlify.app/.
-Netlify is a platform for developers where they can host their web applications for free.
+This React.JS application is hosted on [Netlify](https://www.netlify.com/) at https://codeit-nc.netlify.app/.
 
 ---
