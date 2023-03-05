@@ -1,26 +1,51 @@
-import { Router } from '@reach/router';
-import './App.css';
-import ArticleList from './components/ArticleList';
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Article from './components/Article';
-import Home from './components/Home';
-import ErrorMessages from './components/ErrorMessages';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Topics from "./components/Topics";
+import Articles from "./components/Articles";
+import ArticlesByTopic from "./components/ArticlesByTopic";
+import SingleArticlePage from "./components/SingleArticlePage";
+import ErrorPage from "./components/ErrorPage";
+import { useState } from "react";
 
-const App = () => {
+function App() {
+  const [sortByQuery, setSortByQuery] = useState();
+  const [orderQuery, setOrderQuery] = useState();
+
+  const handleSortBy = (eventKey) => {
+    setSortByQuery(eventKey);
+  };
+  const handleOrder = (eventKey) => {
+    setOrderQuery(eventKey);
+  };
+
   return (
-    <div>
-      <Header />
-      <Nav />
-      <Router>
-        <Home path='/' />
-        <ArticleList path='/articles/:article_topic' />
-        <ArticleList path='/articles' />
-        <Article path='/article/:article_id' />
-        <ErrorMessages default status={404} message='Page not found' />
-      </Router>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Topics handleSortBy={handleSortBy} handleOrder={handleOrder} />
+        <Routes>
+          <Route path="/articles/:article_id" element={<SingleArticlePage />} />
+          <Route
+            path="/articles"
+            element={
+              <ArticlesByTopic
+                sortByQuery={sortByQuery}
+                orderQuery={orderQuery}
+              />
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+          <Route
+            path="/"
+            element={
+              <Articles sortByQuery={sortByQuery} orderQuery={orderQuery} />
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
