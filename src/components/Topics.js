@@ -22,7 +22,6 @@ function Topics({ handleOrder, handleSortBy }) {
         justifyContent: "center",
         marginTop: "20px",
         marginBottom: "20px",
-        
       }}
     >
       <Nav.Item>
@@ -45,14 +44,22 @@ function Topics({ handleOrder, handleSortBy }) {
           Football
         </Nav.Link>
       </Nav.Item>
-      <NavDropdown onSelect={handleSortBy} title="Sort By" id="nav-dropdown">
-        <NavDropdown.Item eventKey="created_at">Date</NavDropdown.Item>
-        <NavDropdown.Item eventKey="votes">Votes</NavDropdown.Item>
-      </NavDropdown>
-      <NavDropdown onSelect={handleOrder} title="Order" id="nav-dropdown">
-        <NavDropdown.Item eventKey="ASC">Ascending</NavDropdown.Item>
-        <NavDropdown.Item eventKey="DESC">Descending</NavDropdown.Item>
-      </NavDropdown>
+      {!searchParams.get("topic") && window.location.pathname !== "/" ? null : (
+        <>
+          <NavDropdown
+            onSelect={handleSortBy}
+            title="Sort By"
+            id="nav-dropdown"
+          >
+            <NavDropdown.Item eventKey="created_at">Date</NavDropdown.Item>
+            <NavDropdown.Item eventKey="votes">Votes</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown onSelect={handleOrder} title="Order" id="nav-dropdown">
+            <NavDropdown.Item eventKey="ASC">Ascending</NavDropdown.Item>
+            <NavDropdown.Item eventKey="DESC">Descending</NavDropdown.Item>
+          </NavDropdown>
+        </>
+      )}
     </Nav>
   );
 }
