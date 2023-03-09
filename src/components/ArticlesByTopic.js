@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchArticlesByTopic } from "../api";
 import ArticleDisplay from "./ArticleDisplay";
-import TopicTitle from "./TopicTitle";
 import ErrorPage from "./ErrorPage";
 import Loading from "./Loading";
 
@@ -37,7 +36,6 @@ const ArticlesByTopic = ({ sortByQuery, orderQuery }) => {
             <Loading />
           ) : (
             <>
-              <TopicTitle title={`${searchParams.get("topic")} articles`} />
               <div className="articles_article-display">
                 {articlesByTopic.map((article) => {
                   return (
