@@ -11,7 +11,7 @@
 
 ## About
 
-This is a front-end project built with React.JS, and it is a social/news web application that enables the user to perform several actions such as:
+This is a front-end project built with React.JS, and social news aggregation, content rating, and discussion web application that enables the user to perform several actions such as:
 
 - scrolling through articles
 - explore articles sorted by topic
@@ -53,7 +53,7 @@ NOTE: The minimum version of **Node.JS** to run the project is v6.9. **React.JS*
 2. To clone the project run this command along with the link of your forked project
 
 ```sh
-git clone <project_name_here>
+git clone <github link here>
 ```
 
 3. Then, go into the directory and open the project
