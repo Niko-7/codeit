@@ -34,20 +34,19 @@ const SingleArticlePage = () => {
         <>
           {article && (
             <div>
-              <div className="articles_single-page-article-container">
+              <div className="content-box articles_single-page-article-container">
                 <h1 id="single-page_title">{article.title}</h1>
                 <div className="articles-container_author-posted-topic">
                   <p id="single-page_posted">
-                    Posted at: {article.created_at.slice(0, 10)} by{" "}
-                    {article.author} in
+                    Posted at {article.created_at.slice(0, 10)} by{" "}
+                    {article.author} in{" "}
+                    <Link
+                      to={`/articles?topic=${article.topic}`}
+                      id="single-page_topic"
+                    >
+                      #{article.topic}
+                    </Link>
                   </p>
-                  <Link
-                    to={`/articles?topic=${article.topic}`}
-                    id="single-page_topic"
-                  >
-                    {" "}
-                    #{article.topic}
-                  </Link>
                 </div>
                 {article.topic === "coding" ? (
                   <img
@@ -74,7 +73,7 @@ const SingleArticlePage = () => {
                 <Votes article={article} />
               </div>
 
-              <div className="articles_single-page-comments-section">
+              <div className="content-box articles_single-page-comments-section">
                 <p id="single-page_comment">{article.comment_count} Comments</p>
                 <Comments article_id={article.article_id} />
               </div>

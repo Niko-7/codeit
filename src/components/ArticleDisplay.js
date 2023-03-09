@@ -11,23 +11,23 @@ const ArticleDisplay = ({ article }) => {
 
   return (
     <div
-      className="articles_single-article"
+      className="content-box articles_single-article"
       onClick={() => navigateToArticleById(article.article_id)}
     >
-      {article.topic === "coding" ? (
-        <img className="topic-image" src={codingImage} alt="coding" />
-      ) : article.topic === "cooking" ? (
-        <img className="topic-image" src={cookingImage} alt="cooking" />
-      ) : (
-        <img className="topic-image" src={footballImage} alt="football" />
-      )}
       <div className="articles_text-container">
         <p className="articles_single-title">{article.title}</p>
-        <p className="articles_single-posted-author">
-          posted at {article.created_at.slice(0, 10)} by {article.author}
-        </p>
-        <div className="articles_single-votes-comments">
-          <p>
+        {article.topic === "coding" ? (
+          <img className="topic-image" src={codingImage} alt="coding" />
+        ) : article.topic === "cooking" ? (
+          <img className="topic-image" src={cookingImage} alt="cooking" />
+        ) : (
+          <img className="topic-image" src={footballImage} alt="football" />
+        )}
+        <div className="articles_single-details">
+          <p className="articles_single-inner">
+            Posted at {article.created_at.slice(0, 10)} by {article.author}
+          </p>
+          <p className="articles_single-inner">
             {article.votes} Votes ● {article.comment_count} Comments
           </p>
         </div>

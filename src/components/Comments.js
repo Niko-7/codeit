@@ -29,14 +29,17 @@ const Comments = ({ article_id }) => {
           <PostComment article_id={article_id} />
           {comments.map((comment) => {
             return (
-              <div key={comment.comment_id}>
-                <p id="comments_author-posted">
-                  {comment.author} at {comment.created_at.slice(0, 10)}
-                </p>
-                <p id="comments_body">{comment.body}</p>
-                {comment.author === "weegembump" && (
-                  <DeleteComment comment_id={comment.comment_id} />
-                )}
+              <div className="comment_wrapper" key={comment.comment_id}>
+                <div id="comments_body">
+                  <p>{comment.body}</p>
+                  <p id="comments_author-posted">
+                    Posted at {comment.created_at.slice(0, 10)} by{" "}
+                    {comment.author}{" "}
+                    {comment.author === "weegembump" && (
+                      <DeleteComment comment_id={comment.comment_id} />
+                    )}
+                  </p>
+                </div>
               </div>
             );
           })}

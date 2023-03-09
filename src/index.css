@@ -1,15 +1,364 @@
 body {
+  background: #f6f6f6;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 2em;
+  color: #141414;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.error_styling {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  color: red;
+  font-weight: 700;
+}
 
+.white-text {
+  color: white;
+  margin: 0;
+}
+
+.loading {
+  width: 100%;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.loading__anim {
+  width: 35px;
+  height: 35px;
+  border: 5px solid rgba(189, 189, 189, 0.25);
+  border-left-color: rgba(3, 155, 229, 1);
+  border-top-color: rgba(3, 155, 229, 1);
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.nav-item {
+  margin: 0 0.2em;
+}
+
+.nav-item:hover {
+  background-color: #0d6efd;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  opacity: 0.9;
+  color: #ffffff !important;
+}
+
+.nav-link:active {
+  color: #0d6efd !important;
+}
+
+.articles_article-display {
+  padding: 25px;
+}
+
+.articles_single-title {
+  font-weight: bold;
+}
+
+.content-box {
+  border: solid 1px gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 7px;
+  box-shadow: 5px 5px 5px gray;
+  width: 90%;
+  margin: 1em auto;
+  background: #ffffff;
+}
+
+.articles_single-article {
+  cursor: pointer;
+  transition: all 200ms ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.articles_single-article:hover {
+  box-shadow: 0 0 6px gray;
+  opacity: 0.9;
+}
+
+.articles_text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  margin: auto;
+}
+
+.articles_single-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articles_single-page-article-container {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em auto;
+}
+
+.articles_single-page-comments-section {
+  padding: 1em 2em;
+  margin: auto;
+}
+
+#comments_author-posted {
+  font-size: small;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comments_button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments_submit-button {
+  border: rgb(5, 112, 112) solid 2px;
+  background-color: teal;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  min-width: fit-content;
+  width: 30%;
+}
+
+.comments_submit-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px gray;
+}
+
+.comment_wrapper {
+  margin: 1em 0;
+}
+
+#comments_body {
+  padding: 1em;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.comments_posted-message {
+  color: rgb(255, 94, 0);
+  font-weight: 600;
+}
+
+#comment-input {
+  height: 8em;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.comments_delete-comment {
+  background-color: rgb(214, 63, 57);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  box-shadow: 0 0 6px gray;
+  cursor: pointer;
+  min-width: fit-content;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 0.5em;
+}
+
+.comments_delete-comment:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px gray;
+}
+
+.comments_delete-comment-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.comments_deleted-message {
+  color: rgb(255, 94, 0);
+  font-weight: 600;
+}
+
+#single-page_title {
+  text-align: center;
+  margin: 0;
+}
+
+#single-page_body {
+  text-align: center;
+  padding: 10px;
+}
+
+#single-page_votes {
+  margin: 0;
+}
+#single-page_comment {
+  font-weight: 700;
+  text-align: left;
+}
+
+.articles-container_author-posted-topic {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.articles-container_votes-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vote-button {
+  min-width: fit-content;
+  width: 30%;
+  margin: 0 1em;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(214, 63, 57);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  box-shadow: 0 0 6px gray;
+  cursor: pointer;
+}
+
+#vote-button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px gray;
+}
+
+.topic-image-single-page {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.topic-image {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.header {
+  background-color: rgba(14, 66, 143);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 2em;
+  align-items: center;
+}
+
+.header-nav {
+  text-decoration: none;
+  color: white;
+}
+
+.header-nav:hover {
+  color: white;
+}
+
+@media screen and (min-width: 600px) {
+  .articles_single-article {
+    flex-direction: row;
+  }
+  .topic-image {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .articles_single-article {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 922px) {
+  .comments_delete-comment {
+    margin-top: 0;
+  }
+  #comments_author-posted {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .topic-image-single-page {
+    max-width: 50%;
+  }
+
+  .articles_single-details {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .articles_single-inner {
+    margin: 0 2em;
+  }
+
+  .articles_single-page-article-container {
+    width: 40%;
+  }
+
+  .articles_single-page-comments-section {
+    width: 40%;
+  }
+
+  .topic-1 {
+    padding-left: 175px;
+  }
+
+  .topic-4 {
+    padding-right: 175px;
+  }
+
+  .articles_topic-title {
+    width: 48%;
+    padding: 5px;
+  }
+
+  .articles_article-display {
+    padding: 0 25px;
+    margin: auto;
+  }
+}
