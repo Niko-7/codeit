@@ -12,12 +12,7 @@ const UserInterface = () => {
     });
   }, []);
 
-  return (
-    <div className="user-interface">
-      <img src={currentUser.avatar_url} alt="user-avatar" className="avatar" />
-      <p className="username">Signed in as: {currentUser.username}</p>
-    </div>
-  );
+  return <p className="white-text">Signed in as: {currentUser.username}</p>;
 };
 
 export default UserInterface;
