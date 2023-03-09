@@ -1,7 +1,6 @@
 import { fetchArticles } from "../api";
 import { useState, useEffect } from "react";
 import ArticleDisplay from "./ArticleDisplay";
-import TopicTitle from "./TopicTitle";
 import ErrorPage from "./ErrorPage";
 import Loading from "./Loading";
 
@@ -34,7 +33,6 @@ const Articles = ({ sortByQuery, orderQuery }) => {
             <Loading />
           ) : (
             <>
-              <TopicTitle title={"Read all the best articles"} />
               <div className="articles_article-display">
                 {articles.map((article) => {
                   return (
